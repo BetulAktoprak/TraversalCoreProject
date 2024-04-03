@@ -1,0 +1,40 @@
+﻿@model EntityLayer.Concrete.Guide
+@{
+    ViewData["Title"] = "EditGuide";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h3>Rehber Düzenleme</h3>
+<br />
+<form method="post">
+    @Html.HiddenFor(x => x.GuideID)
+    <div class="form-group">
+        @Html.Label("Ad Soyad")
+        <input type="text" asp-for="Name" class="form-control" />
+    </div>
+    <br />
+    <div class="form-group">
+        @Html.Label("Açıklama")
+        <textarea cols="30" rows="5" asp-for="Description" class="form-control"></textarea>
+    </div>
+    <br />
+    <div class="form-group">
+        @Html.Label("Fotoğraf")
+        <input type="text" asp-for="Image" class="form-control" />
+    </div>
+    <br />
+    <div class="form-group">
+        @Html.Label("Instagram Adresi")
+        <input type="text" class="form-control" asp-for="InstagramUrl" />
+    </div>
+    <br />
+    <div class="form-group">
+        @Html.Label("Twitter Adresi")
+        <input type="text" class="form-control" asp-for="TwitterUrl" />
+    </div>
+    <br />
+    <button class="btn btn-outline-success">Güncelle</button>
+    <a href="/Admin/Guide/Index" class="btn btn-outline-primary">Geri Dön</a>
+</form>
+
+
